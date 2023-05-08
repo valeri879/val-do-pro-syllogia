@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'syllogia-pro-lessons';
+  public title = 'syllogia-pro-lessons';
+
+  public user = {
+    name: 'Val',
+    lastName: 'Do'
+  }
+
+  isMerried: boolean = true;
 }

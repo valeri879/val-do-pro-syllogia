@@ -1,8 +1,6 @@
 :host {
     display: block;
     border: 1px solid red;
-}
-
-.myh1 {
-    color: green;
+    margin: 10px;
+    background-color: white;
 }
