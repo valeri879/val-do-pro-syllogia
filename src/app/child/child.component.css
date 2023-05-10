@@ -1,8 +1,11 @@
 :host {
     display: block;
-    background-color: aqua;
+    border: 1px solid red;
+    margin: 10px;
 }
 
-h1 {
-    color: blueviolet;
+img {
+    background-color: blueviolet;
+    display: block;
+    height: 200px;
 }

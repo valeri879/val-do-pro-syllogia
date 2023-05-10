@@ -1,4 +1,27 @@
-<h1 class="myh1">Hello World!!!</h1>
+<app-child *ngFor="let card of data" [data]="card"></app-child>
+
+<!-- <div *ngIf="10 < 5; else other">10 metia 5-ze</div>
+
+<ng-template #other>
+    10 naklebia 5-ze
+</ng-template> -->
+
+<!-- <ul>
+    <li *ngFor="let number of numbers; let i = index">{{ number }} index {{i}}</li>
+
+    <li *ngFor="let number of numbers;">
+        <ng-container *ngIf="number == 6">:)</ng-container>
+        {{ number }}
+    </li>
+</ul> -->
+
+<!-- <ng-container *ngFor="let number of numbers">
+    {{ number }}
+</ng-container> -->
+
+<!-- <h1 class="myh1">Hello World!!!</h1>
 <p>{{ title }}</p>
-{{ user.name }}
-<app-child [data]="isMerried"></app-child>
+<app-child [data]="isMerried">
+    <h2>some info</h2>
+    <h3 second>some another info</h3>
+</app-child> -->
