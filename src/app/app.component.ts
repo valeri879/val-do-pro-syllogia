@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Card } from './interfaces/card';
 
 @Component({
   selector: 'app-root',
@@ -8,16 +7,14 @@ import { Card } from './interfaces/card';
 })
 export class AppComponent implements OnInit {
   
-  public color: string = 'red';
-
-  public names: string[] = [
-    'Val',
-    'Armazi',
-    'Mariami',
-    'Dato'
-  ];
+  public fontSizePx: number = 16;
 
   ngOnInit(): void {
     
   }
+
+  submit(val: string) {
+    console.log(val);
+  }
+
 }

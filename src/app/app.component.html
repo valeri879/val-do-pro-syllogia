@@ -1,2 +1,6 @@
-<div appHighlight defaultColor="blue">I'm div element with directive</div>
-<div *ngFor="let name of names">{{ name | prefix }}</div>
+<app-child [(size)]="fontSizePx"></app-child>
+<app-child [size]="fontSizePx" (sizeChange)="fontSizePx=$event"></app-child>
+
+<!-- 
+<input #phone type="text" placeholder="phone number">
+<button (click)="submit(phone.value)">submit</button> -->
