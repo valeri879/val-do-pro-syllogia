@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Card } from '../interfaces/card';
 
 @Component({
   selector: 'app-child',
@@ -11,14 +10,16 @@ export class ChildComponent {
   @Output() sizeChange = new EventEmitter<number>();
 
   dec() {
-    this.resize(this.size --);
+    this.resize(-1);
   }
 
   inc() {
-    this.resize(this.size ++);
+    this.resize(+1);
   }
 
   resize(i: number) {
-    this.sizeChange.emit(i);
+    console.log(i)
+    this.size = Math.min(40, Math.max(8, +this.size + i));
+    this.sizeChange.emit(this.size);
   }
 }
