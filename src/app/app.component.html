@@ -1,5 +1,20 @@
-<app-child [(size)]="fontSizePx"></app-child>
-<p [style.font-size.px]="fontSizePx">Resizable text</p>
-<!-- 
-<input #phone type="text" placeholder="phone number">
-<button (click)="submit(phone.value)">submit</button> -->
+<div [formGroup]="form">
+    <div class="mb-3">
+        <input 
+            [class.border-success]="form.controls['email'].valid" 
+            [class.border-danger]="form.controls['email'].invalid && form.controls['email'].dirty" 
+            formControlName="email"
+            type="email"
+            placeholder="email"
+            class="form-control">
+    </div>
+    <div class="mb-3">
+        <input formControlName="password" type="password" placeholder="password" class="form-control">
+    </div>
+    <button [disabled]="form.invalid" (click)="submit()" class="btn btn-primary">submit</button>
+</div>
+
+<!-- <input #query (keyup)="search(query.value)" type="text" placeholder="search">
+<div *ngFor="let user of users">
+    {{ user.name }}
+</div> -->
