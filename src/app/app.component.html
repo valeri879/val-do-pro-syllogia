@@ -1,5 +1,11 @@
-<app-child [(size)]="fontSizePx"></app-child>
-<p [style.font-size.px]="fontSizePx">Resizable text</p>
-<!-- 
-<input #phone type="text" placeholder="phone number">
-<button (click)="submit(phone.value)">submit</button> -->
+<input type="text" [(ngModel)]="name" placeholder="Your name">
+<input type="text" [(ngModel)]="lastName" placeholder="Your last name">
+<div>
+    <div>
+        <b>Name: </b>{{ name }}
+    </div>
+    <div>
+        <b>Last name: </b>{{ lastName }}
+    </div>
+</div>
+<app-child></app-child>

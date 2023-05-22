@@ -1,25 +1,20 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TestService } from '../services/test.service';
 
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.css'],
+  providers: [TestService]
 })
-export class ChildComponent {
-  @Input() size!: number;
-  @Output() sizeChange = new EventEmitter<number>();
+export class ChildComponent implements OnInit {
+  public query!: string;
 
-  dec() {
-    this.resize(-1);
+  constructor(public testService: TestService) {
   }
 
-  inc() {
-    this.resize(+1);
+  ngOnInit(): void {
+    console.log(console.log(this.query));
   }
 
-  resize(i: number) {
-    console.log(i)
-    this.size = Math.min(40, Math.max(8, +this.size + i));
-    this.sizeChange.emit(this.size);
-  }
 }

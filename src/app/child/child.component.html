@@ -1,3 +1,5 @@
-<p [style.font-size.px]="size">FontSize: {{size}}px</p>
-<button (click)="inc()">incr</button>
-<button (click)="dec()">decr</button>
+<input [(ngModel)]="query" type="text" placeholder="Search...">
+{{ query }}
+<ul>
+    <li *ngFor="let user of testService.users">{{ testService.fullName(user.name, user.lastName) }}</li>
+</ul>

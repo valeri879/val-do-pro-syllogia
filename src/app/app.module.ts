@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ChildComponent } from './child/child.component';
+import { TestService } from './services/test.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -10,9 +12,12 @@ import { ChildComponent } from './child/child.component';
     ChildComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    // TestService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
