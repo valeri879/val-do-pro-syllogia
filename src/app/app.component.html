@@ -1,20 +1,56 @@
 <div [formGroup]="form">
     <div class="mb-3">
         <input 
-            [class.border-success]="form.controls['email'].valid" 
-            [class.border-danger]="form.controls['email'].invalid && form.controls['email'].dirty" 
-            formControlName="email"
-            type="email"
-            placeholder="email"
+            formControlName="name"
+            type="text"
+            placeholder="our name"
             class="form-control">
     </div>
     <div class="mb-3">
-        <input formControlName="password" type="password" placeholder="password" class="form-control">
+        <input 
+            formControlName="lastName"
+            type="text"
+            placeholder="our last name"
+            class="form-control">
     </div>
+
+    <div formArrayName="friendsGroup" class="mb-3 border-bottom">
+        <div class="mb-3" *ngFor="let friend of friends.controls; let i = index">
+            <div class="row gx-1">
+                <div class="col-10">
+                    <input placeholder="enter you friend name {{ i + 1 }}" [formControlName]="i" type="text" class="form-control">
+                </div>
+                <div class="col-2">
+                    <button (click)="removeFriend(i)" class="btn btn-danger btn-block">delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button (click)="addFriend()" class="btn btn-primary mb-3">add your friend</button>
+    <!-- parents group -->
+    <div formArrayName="parents" class="mb-3">
+        <div class="mb-3" *ngFor="let parent of parents.controls; let i = index">
+            <div [formGroupName]="i" class="row gx-1">
+                <div class="col-5">
+                    <input placeholder="mother {{ i + 1 }}" formControlName="mother" type="text" class="form-control">
+                </div>
+                <div class="col-5">
+                    <input placeholder="father {{ i + 1 }}" formControlName="father" type="text" class="form-control">
+                </div>
+                <div class="col-2">
+                    <button (click)="removeParents(i)" class="btn btn-danger btn-block">delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button (click)="addParents()" class="btn btn-outline-primary">add your parents</button>
+    <br>
+    <code>
+        {{ form.value | json }}
+        <hr>
+        {{ form.value.parents | json }}
+    </code>
+        <hr>
     <button [disabled]="form.invalid" (click)="submit()" class="btn btn-primary">submit</button>
 </div>
-
-<!-- <input #query (keyup)="search(query.value)" type="text" placeholder="search">
-<div *ngFor="let user of users">
-    {{ user.name }}
-</div> -->
