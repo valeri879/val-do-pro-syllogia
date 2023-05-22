@@ -7,14 +7,5 @@ import { TestService } from '../services/test.service';
   styleUrls: ['./child.component.css'],
   providers: [TestService]
 })
-export class ChildComponent implements OnInit {
-  public query!: string;
-
-  constructor(public testService: TestService) {
-  }
-
-  ngOnInit(): void {
-    console.log(console.log(this.query));
-  }
-
+export class ChildComponent {
 }

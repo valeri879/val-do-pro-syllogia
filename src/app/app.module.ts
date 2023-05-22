@@ -3,8 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ChildComponent } from './child/child.component';
-import { TestService } from './services/test.service';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,10 +12,7 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    FormsModule
-  ],
-  providers: [
-    // TestService
+    ReactiveFormsModule
   ],
   bootstrap: [AppComponent]
 })
