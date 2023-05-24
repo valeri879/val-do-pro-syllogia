@@ -5,6 +5,7 @@
             type="text"
             placeholder="our name"
             class="form-control">
+        <b>{{ name }}</b>
     </div>
     <div class="mb-3">
         <input 
@@ -51,6 +52,6 @@
         <hr>
         {{ form.value.parents | json }}
     </code>
-        <hr>
+    <hr>
     <button [disabled]="form.invalid" (click)="submit()" class="btn btn-primary">submit</button>
 </div>

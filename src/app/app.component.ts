@@ -16,11 +16,15 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this._fb.group({
-      name: [''],
+      name: ['Val Do'],
       lastName: [''],
       friendsGroup: this._fb.array([]),
       parents: this._fb.array([]),
     });
+  }
+
+  get name(): string {
+    return this.form.controls['name'].value;
   }
 
   addFriend() {
@@ -40,7 +44,7 @@ export class AppComponent implements OnInit {
     this.parents.removeAt(i);
   }
 
-  removeFriend(i: number) {
+  removeFriend(i: number): void {
     this.friends.removeAt(i);
     console.log(i)
   }
