@@ -9,6 +9,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { BlogPageComponent } from './pages/blog-page/blog-page.component';
 import { CoursesPageComponent } from './pages/courses-page/courses-page.component';
 import { CardComponent } from './components/card/card.component';
+import { CourseDetailPageComponent } from './pages/course-detail-page/course-detail-page.component';
+import { ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -18,9 +20,11 @@ import { CardComponent } from './components/card/card.component';
     HomePageComponent,
     BlogPageComponent,
     CoursesPageComponent,
-    CardComponent
+    CardComponent,
+    CourseDetailPageComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule
   ],

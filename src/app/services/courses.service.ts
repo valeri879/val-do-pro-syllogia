@@ -25,7 +25,7 @@ export class CoursesService {
       descr: 'Course about reactjs and more...',
       img: 'https://val-do.com/uploads/1667493799156.jpg'
     },
-  ]
+  ];
 
   constructor() { }
 }

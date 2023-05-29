@@ -1,0 +1,12 @@
+<img class="img-fluid" [src]="course[0].img" alt="">
+<h1>{{ course[0].title }} <code>{{ course[0].id }}</code></h1>
+<p>{{ course[0].descr }}</p>
+<hr>
+<h2>Similar courses</h2>
+<div class="row">
+    <a routerLink="/course/{{ similarCourse.id }}" 
+        class="text-decoration-none col-6 col-md-4" 
+        *ngFor="let similarCourse of similarCourses">
+        <app-card [data]="similarCourse"></app-card>
+    </a>
+</div>

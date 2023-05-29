@@ -1,5 +1,10 @@
+<div class="mt-4">
+    <input [formControl]="search" type="text" class="form-control">
+</div>
 <div class="row py-5">
-    <div class="col-4" *ngFor="let course of coursesService.courses">
-        <app-card [data]="course"></app-card>
+    <div class="col-md-4 mb-3" *ngFor="let course of filteredCourse">
+        <a routerLink="/course/{{ course.id }}" class="text-decoration-none">
+            <app-card [data]="course"></app-card>
+        </a>
     </div>
 </div>
