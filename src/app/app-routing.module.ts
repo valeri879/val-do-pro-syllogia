@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'courses', component: CoursesPageComponent, title: 'კურსები' },
   { 
     path: 'auth',
-    component: AuthPageComponent, 
+    component: AuthPageComponent,
     title: 'ავტორიზაცია',
     children: [
       { path: 'login', component: LoginPageComponent, title: 'შესვლა' },
