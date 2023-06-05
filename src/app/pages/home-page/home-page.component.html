@@ -1,1 +1,10 @@
-<p>home-page works!</p>
+
+<ng-container *ngIf="data$ | async as data">
+    <h1>Categories</h1>
+    <div *ngFor="let category of data.categories" class="card">
+        <div class="card-body">
+            <h3>{{ category.title }}</h3>
+            <div [innerHTML]="category.descr"></div>
+        </div>
+    </div>
+</ng-container>
