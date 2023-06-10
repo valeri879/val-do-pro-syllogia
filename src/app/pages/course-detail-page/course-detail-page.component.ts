@@ -21,25 +21,8 @@ export class CourseDetailPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.similarCourses = this._coursesService.courses;
-    console.log(this._route.snapshot.params);
-    // this.courseId = this._route.snapshot.params['id'];
-
-    this._route.params.subscribe(
-      params => {
-        this.courseId = params['id'];
-        this._filter();
-        console.log(params)
-      }
-    )
-
-
-    console.log(this.course);
   }
 
   private _filter() {
-    this.course = this._coursesService.courses.filter(course => {
-      return course.id == this.courseId;
-    });
   }
 }

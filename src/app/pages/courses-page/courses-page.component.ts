@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { Course } from 'src/app/interfaces/course';
 import { CoursesService } from 'src/app/services/courses.service';
 
@@ -10,22 +11,14 @@ import { CoursesService } from 'src/app/services/courses.service';
 })
 export class CoursesPageComponent implements OnInit {
 
+  public categories$!: Observable<any>;
   public search: FormControl = new FormControl();
-  public filteredCourse: Course[] = [];
 
   constructor(
     public coursesService: CoursesService
   ) {}
 
   ngOnInit(): void {
-    this.filteredCourse = this.coursesService.courses;
-
-    this.search.valueChanges.subscribe(
-      res => {
-        this.filteredCourse = this.coursesService.courses.filter(course => {
-          return res ? course.title.includes(res) : true;
-        });
-      }
-    );
+    this.categories$ = this.coursesService.getCategories();
   }
 }

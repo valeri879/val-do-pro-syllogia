@@ -8,11 +8,13 @@ import { AuthPageComponent } from './pages/auth-page/auth-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { SignUpPageComponent } from './pages/sign-up-page/sign-up-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { CourseListPageComponent } from './pages/course-list-page/course-list-page.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent, title: 'მთავარი' },
   { path: 'blog', component: BlogPageComponent, title: 'ბლოგი' },
   { path: 'courses', component: CoursesPageComponent, title: 'კურსები' },
+  { path: 'courses/:id', component: CourseListPageComponent, title: 'კურსების სია' },
   { 
     path: 'auth',
     component: AuthPageComponent,

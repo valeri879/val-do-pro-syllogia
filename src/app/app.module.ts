@@ -14,7 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthPageComponent } from './pages/auth-page/auth-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { SignUpPageComponent } from './pages/sign-up-page/sign-up-page.component';
-import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component'
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { CourseListPageComponent } from './pages/course-list-page/course-list-page.component'
 
 console.log('App module is loaded...');
 
@@ -31,7 +32,8 @@ console.log('App module is loaded...');
     AuthPageComponent,
     LoginPageComponent,
     SignUpPageComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    CourseListPageComponent
   ],
   imports: [
     ReactiveFormsModule,

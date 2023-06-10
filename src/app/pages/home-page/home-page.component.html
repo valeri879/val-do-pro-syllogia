@@ -2,6 +2,7 @@
 <ng-container *ngIf="data$ | async as data">
     <h1>Categories</h1>
     <div *ngFor="let category of data.categories" class="card">
+        <img src="https://val-do.com/{{category.img}}" alt="">
         <div class="card-body">
             <h3>{{ category.title }}</h3>
             <div [innerHTML]="category.descr"></div>

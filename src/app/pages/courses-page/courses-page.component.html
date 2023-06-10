@@ -2,8 +2,8 @@
     <input [formControl]="search" type="text" class="form-control">
 </div>
 <div class="row py-5">
-    <div class="col-md-4 mb-3" *ngFor="let course of filteredCourse">
-        <a routerLink="/course/{{ course.id }}" class="text-decoration-none">
+    <div class="col-md-4 mb-3" *ngFor="let course of categories$ | async">
+        <a routerLink="/courses/{{ course._id }}" class="text-decoration-none">
             <app-card [data]="course"></app-card>
         </a>
     </div>
