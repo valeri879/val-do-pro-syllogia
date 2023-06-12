@@ -1,1 +1,13 @@
-{{ courseList$ | async | json }}
+<div class="row">
+    <a 
+        *ngFor="let course of courseList$ | async"
+        routerLink="/course/detail/{{ course._id }}"
+        class="col-lg-4">
+        <div class="card">
+            <img src="https://val-do.com/{{ course.img }}" alt="">
+            <div class="card-body">
+                <h1>{{ course.title }}</h1>
+            </div>
+        </div>
+    </a>
+</div>

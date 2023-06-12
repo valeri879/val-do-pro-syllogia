@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'blog', component: BlogPageComponent, title: 'ბლოგი' },
   { path: 'courses', component: CoursesPageComponent, title: 'კურსები' },
   { path: 'courses/:id', component: CourseListPageComponent, title: 'კურსების სია' },
+  { path: 'course/detail/:id', component: CourseDetailPageComponent },
   { 
     path: 'auth',
     component: AuthPageComponent,
@@ -24,7 +25,6 @@ const routes: Routes = [
       { path: 'sign-up', component: SignUpPageComponent, title: 'რეგისტრაცია' },
     ]
   },
-  { path: 'course/:id', component: CourseDetailPageComponent, title: 'დეტალური კურსის გვერდი' },
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   { path: '**', component: NotFoundPageComponent, title: '404' },
 ]; 
