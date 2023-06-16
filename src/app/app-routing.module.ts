@@ -9,9 +9,12 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { SignUpPageComponent } from './pages/sign-up-page/sign-up-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { CourseListPageComponent } from './pages/course-list-page/course-list-page.component';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { loginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent, title: 'მთავარი' },
+  { path: 'profile', component: ProfilePageComponent, title: 'პროფილი' },
   { path: 'blog', component: BlogPageComponent, title: 'ბლოგი' },
   { path: 'courses', component: CoursesPageComponent, title: 'კურსები' },
   { path: 'courses/:id', component: CourseListPageComponent, title: 'კურსების სია' },
@@ -20,6 +23,7 @@ const routes: Routes = [
     path: 'auth',
     component: AuthPageComponent,
     title: 'ავტორიზაცია',
+    canActivate: [loginGuard],
     children: [
       { path: 'login', component: LoginPageComponent, title: 'შესვლა' },
       { path: 'sign-up', component: SignUpPageComponent, title: 'რეგისტრაცია' },

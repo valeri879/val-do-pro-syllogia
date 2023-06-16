@@ -15,7 +15,8 @@ import { AuthPageComponent } from './pages/auth-page/auth-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { SignUpPageComponent } from './pages/sign-up-page/sign-up-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
-import { CourseListPageComponent } from './pages/course-list-page/course-list-page.component'
+import { CourseListPageComponent } from './pages/course-list-page/course-list-page.component';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component'
 
 console.log('App module is loaded...');
 
@@ -33,7 +34,8 @@ console.log('App module is loaded...');
     LoginPageComponent,
     SignUpPageComponent,
     NotFoundPageComponent,
-    CourseListPageComponent
+    CourseListPageComponent,
+    ProfilePageComponent
   ],
   imports: [
     ReactiveFormsModule,
