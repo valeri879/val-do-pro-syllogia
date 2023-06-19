@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
@@ -17,6 +17,7 @@ import { SignUpPageComponent } from './pages/sign-up-page/sign-up-page.component
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { CourseListPageComponent } from './pages/course-list-page/course-list-page.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component'
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 console.log('App module is loaded...');
 
@@ -43,7 +44,13 @@ console.log('App module is loaded...');
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
