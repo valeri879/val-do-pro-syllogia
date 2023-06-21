@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { AuthService } from './auth.service';
 
 @Injectable({
@@ -14,6 +14,11 @@ export class ProfileService {
   ) { }
 
   getProfile(): Observable<any> {
-    return this._http.get(`http://localhost:8000/api/user`);
+    return this._http.get(`http://localhost:8000/api/user`).pipe(
+      tap((data: any) => {
+        const isAdmin = data['user']['isAdmin'];
+        localStorage.setItem('admin', JSON.stringify(isAdmin));
+      })
+    );
   }
 }

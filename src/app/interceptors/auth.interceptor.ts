@@ -16,13 +16,13 @@ export class AuthInterceptor implements HttpInterceptor {
   ) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-
-    if (this._authService.getToken()) {
+    
+    if (localStorage.getItem('user')) {
       request = request.clone({
         headers: request.headers.set('x-auth-token', this._authService.getToken())
       });
     }
-
+    
     return next.handle(request);
   }
 }
